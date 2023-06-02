@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>success</title>
+
   <style>
     /* 设置页面背景色为黑色 */
     body {
@@ -33,4 +34,57 @@
 <body>
 <h1>登录成功！</h1>
 </body>
+
+<!-- 添加一个用于显示花瓣的元素 -->
+<div id="petals"></div>
+
+<style>
+  /* 设置花瓣样式 */
+  .petal {
+    position: absolute;
+    top: -5vh; /* 起始位置为视口顶部外面 */
+    width: 50px;
+    height: 50px;
+    background-image: url("https://i.imgur.com/2rXMu5E.png"); /* 花瓣图片地址 */
+    background-size: contain;
+    animation: fall linear 10s infinite; /* 设置动画效果 */
+  }
+
+  /* 定义花瓣掉落动画效果 */
+  @keyframes fall {
+    from {
+      transform: translateY(-10vh); /* 开始位置在视口顶部上方 */
+    }
+    to {
+      transform: translateY(110vh); /* 结束位置在视口底部下方 */
+    }
+  }
+</style>
+
+<script>
+  // 在页面加载完成后执行
+  window.onload = function() {
+    // 获取页面宽度和高度
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+
+    // 计算需要多少个花瓣
+    var numPetals = Math.floor(Math.sqrt(w * h) / 10);
+
+    // 循环创建花瓣元素并添加到页面中
+    for (var i = 0; i < numPetals; i++) {
+      var petal = document.createElement("div");
+      petal.classList.add("petal");
+
+      // 随机设置花瓣的起始位置和掉落时间
+      petal.style.left = Math.random() * w + "px";
+      petal.style.animationDelay = Math.random() * 10 + "s";
+
+      // 添加花瓣到页面中
+      document.getElementById("petals").appendChild(petal);
+    }
+  };
+</script>
 </html>
+
+
