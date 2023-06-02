@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <style>
+        /* 设置页面背景 */
+        body {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        }
+
+        /* 设置标题样式 */
+        h1 {
+            font-size: 6rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 30vh;
+            text-shadow: 0 0 10px #fff;
+            animation: blink 2s infinite;
+        }
+
+        /* 定义闪烁动画效果 */
+        @keyframes blink {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* 添加旋转效果 */
+        h1:hover {
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Hello, Spring Boot!</h1>
+</body>
+</html>
